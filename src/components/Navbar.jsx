@@ -32,6 +32,7 @@ function ButtonAppBar(props) {
             className={classes.menuButton}
             color="inherit"
             aria-label="Menu"
+            onClick={props.openSideBar}
           >
             <MenuIcon />
           </IconButton>
@@ -49,7 +50,8 @@ function ButtonAppBar(props) {
 }
 
 ButtonAppBar.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  openSideBar: PropTypes.func
 };
 
 export default withStyles(styles)(ButtonAppBar);

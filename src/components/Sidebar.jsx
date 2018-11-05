@@ -73,34 +73,22 @@ const styles = theme => ({
 });
 
 class Siderbar extends React.Component {
-  state = {
-    open: true
-  };
-
-  handleDrawerOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleDrawerClose = () => {
-    this.setState({ open: false });
-  };
 
   render() {
     const { classes, theme } = this.props;
-    const { open } = this.state;
 
     return (
       <Drawer
         className={classes.drawer}
         variant="persistent"
         anchor="left"
-        open={open}
+        open={this.props.open}
         classes={{
           paper: classes.drawerPaper
         }}
       >
         <div className={classes.drawerHeader}>
-          <IconButton onClick={this.handleDrawerClose}>
+          <IconButton onClick={this.props.closeSideBar}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
             ) : (
